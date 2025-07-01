@@ -9,7 +9,20 @@
 </head>
 <body>
   <h1>Inventory-Zilla</h1>
-  <div id="app">Loading...</div>
+  <button onclick="document.getElementById('importInput').click()">Import JSON</button>
+  <input type="file" id="importInput" style="display:none" accept=".json" />
+  <button onclick="showAddItemForm()">Add Item</button>
+  <div id="formSection" style="display:none">
+    <h3>New Item</h3>
+    <input id="newName" placeholder="Name" />
+    <input id="newDescription" placeholder="Description" />
+    <input id="newCategory" placeholder="Category" />
+    <input id="newLocation" placeholder="Location" />
+    <input id="newQuantity" type="number" placeholder="Quantity" />
+    <button onclick="submitNewItem()">Submit</button>
+  </div>
+  <hr />
+  <div id="inventoryList">Loading inventory...</div>
   <script src="lib/qrcode.min.js"></script>
   <script src="lib/html5-qrcode.min.js"></script>
   <script src="app.js"></script>
